@@ -1,0 +1,50 @@
+#!/bin/bash
+# Apply Chatra screensaver + fastfetch branding; restore the user's
+# previous branding when leaving the theme.
+
+set -euo pipefail
+
+THEME_NAME="${1:-}"
+THEME_DIR="$HOME/.config/omarchy/themes/chatra"
+EXTRA_DIR="$THEME_DIR/extras"
+BACKUP_DIR="$HOME/.local/state/omarchy/chatra-branding-backup"
+MARKER="$BACKUP_DIR/applied"
+BRAND_DIR="$HOME/.config/omarchy/branding"
+FASTFETCH_DIR="$HOME/.config/fastfetch"
+
+backup_if_needed() {
+  [[ -f $MARKER ]] && return 0
+  mkdir -p "$BACKUP_DIR"
+  [[ -f $BRAND_DIR/screensaver.txt ]] && cp -a "$BRAND_DIR/screensaver.txt" "$BACKUP_DIR/screensaver.txt"
+  [[ -f $BRAND_DIR/about.txt ]] && cp -a "$BRAND_DIR/about.txt" "$BACKUP_DIR/about.txt"
+  if [[ -f $FASTFETCH_DIR/config.jsonc ]]; then
+    cp -a "$FASTFETCH_DIR/config.jsonc" "$BACKUP_DIR/fastfetch.jsonc"
+    echo "user" >"$BACKUP_DIR/fastfetch-state"
+  else
+    echo "none" >"$BACKUP_DIR/fastfetch-state"
+  fi
+  echo "chatra" >"$MARKER"
+}
+
+restore_backup() {
+  [[ -f $MARKER ]] || return 0
+  [[ -f $BACKUP_DIR/screensaver.txt ]] && cp -a "$BACKUP_DIR/screensaver.txt" "$BRAND_DIR/screensaver.txt"
+  [[ -f $BACKUP_DIR/about.txt ]] && cp -a "$BACKUP_DIR/about.txt" "$BRAND_DIR/about.txt"
+  mkdir -p "$FASTFETCH_DIR"
+  if [[ -f $BACKUP_DIR/fastfetch-state && $(cat "$BACKUP_DIR/fastfetch-state") == user && -f $BACKUP_DIR/fastfetch.jsonc ]]; then
+    cp -a "$BACKUP_DIR/fastfetch.jsonc" "$FASTFETCH_DIR/config.jsonc"
+  else
+    rm -f "$FASTFETCH_DIR/config.jsonc"
+  fi
+  rm -f "$MARKER"
+}
+
+if [[ $THEME_NAME == "chatra" ]]; then
+  backup_if_needed
+  mkdir -p "$BRAND_DIR" "$FASTFETCH_DIR"
+  cp "$EXTRA_DIR/branding/screensaver.txt" "$BRAND_DIR/screensaver.txt"
+  cp "$EXTRA_DIR/branding/about.txt" "$BRAND_DIR/about.txt"
+  cp "$EXTRA_DIR/fastfetch/config.jsonc" "$FASTFETCH_DIR/config.jsonc"
+else
+  restore_backup
+fi

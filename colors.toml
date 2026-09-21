@@ -1,0 +1,60 @@
+# Chatra
+# Lao saa-paper parasols. Hub black, wine silk, indigo, forest, mustard.
+
+mode = "dark"
+
+accent = "#c75f8c"
+cursor = "#c75f8c"
+selection = "#3a2430"
+muted = "#5a4850"
+
+background = "#100f10"
+dark_background = "#0b0a0b"
+darker_background = "#060506"
+lighter_background = "#1e1a1c"
+
+# Dusty paper grain — lilac, not grey
+foreground = "#e0d4d8"
+dark_foreground = "#7a6870"
+light_foreground = "#eadce0"
+bright_foreground = "#f4ecee"
+
+selection_foreground = "#f4ecee"
+selection_background = "#3a2430"
+
+# Wine → indigo → forest, the three nearest parasols
+hyprland_active_border = "rgba(c75f8cee) rgba(5c7eb0ee) rgba(7a9a72ee) 45deg"
+hyprland_inactive_border = "rgba(2a222888)"
+
+red = "#c45a64"
+yellow = "#c4b056"
+orange = "#c4785a"
+green = "#7a9a72"
+cyan = "#6a8aa0"
+blue = "#5c7eb0"
+magenta = "#c75f8c"
+brown = "#6a4030"
+
+bright_red = "#e07880"
+bright_yellow = "#dcc86a"
+bright_green = "#9cb894"
+bright_cyan = "#8ab0c4"
+bright_blue = "#7a9ac4"
+bright_magenta = "#d488b0"
+
+color0 = "#100f10"
+color1 = "#c45a64"
+color2 = "#7a9a72"
+color3 = "#c4b056"
+color4 = "#5c7eb0"
+color5 = "#c75f8c"
+color6 = "#6a8aa0"
+color7 = "#e0d4d8"
+color8 = "#7a6870"
+color9 = "#e07880"
+color10 = "#9cb894"
+color11 = "#dcc86a"
+color12 = "#7a9ac4"
+color13 = "#d488b0"
+color14 = "#8ab0c4"
+color15 = "#f4ecee"
