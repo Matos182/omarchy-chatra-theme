@@ -18,8 +18,10 @@ omarchy hook install theme-set ~/.config/omarchy/themes/chatra/extras/hooks/them
 omarchy theme set chatra
 ```
 
-Applying Chatra then swaps screensaver and fastfetch art to a ceremonial
-parasol. Leaving the theme restores whatever you had before.
+Applying Chatra then swaps fastfetch to a dharmachakra and the screensaver
+to a Mekong night: Đông Sơn sun-star, a nāga, Angkor Wat, a lotus, That
+Luang with a chatra on the spire, and a nón lá on the river. Leaving the
+theme restores whatever you had before.
 
 ## Gallery thumbnail
 
