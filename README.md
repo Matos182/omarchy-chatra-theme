@@ -4,9 +4,9 @@ A dark [Omarchy](https://omarchy.org/) theme pulled from a close-up of **Lao saa
 
 In Theravāda Buddhism the ceremonial umbrella is the **chatra**: protection, rank, and a moving temple roof. This palette is the stall at night — hub black, wine silk, indigo, forest, a little mustard left in the corner.
 
-![Live desktop — Chatra fastfetch, Neovim on colors.toml, and btop](preview.png)
+![Live desktop — dharmachakra in fastfetch, btop in wine/indigo/forest](preview.png)
 
-Live Omarchy 4 session: ceremonial parasol mark, the palette file in Neovim, btop in wine/indigo/forest. Wallpaper photograph by Fabio Matos.
+Live Omarchy 4 session. The fastfetch mark is a **dharmachakra** (wheel of dharma) — eight spokes, solid hub — in wine, indigo, and forest. Wallpaper photograph by Fabio Matos.
 
 ## Install
 
